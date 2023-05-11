@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     # --Custom Apps
     'user.apps.UserConfig',
-    'project.apps.StoreConfig',
+    'project.apps.ProjectConfig',
 
     # -- Packages
     'rest_framework',
