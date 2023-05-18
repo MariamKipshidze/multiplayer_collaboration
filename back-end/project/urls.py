@@ -9,5 +9,6 @@ router.register('projects', views.ProjectViewSet, basename="project")
 
 urlpatterns = [
     path('', include(router.urls)),
-    path(r'project_detail/<int:pk>/', ProjectDetail.as_view()),
+    # path(r'project_detail/<int:pk>/', ProjectDetail.as_view()),
+    path('<str:room_name>/<int:pk>/', ProjectDetail.as_view(), name='room'),
 ]
