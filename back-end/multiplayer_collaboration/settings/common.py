@@ -143,3 +143,9 @@ MEDIA_URL = 'media/'
 AUTH_USER_MODEL = 'user.User'
 
 ASGI_APPLICATION = "myproject.asgi.application"
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    },
+}
