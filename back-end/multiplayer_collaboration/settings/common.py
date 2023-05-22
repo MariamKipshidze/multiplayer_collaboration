@@ -142,7 +142,7 @@ MEDIA_URL = 'media/'
 
 AUTH_USER_MODEL = 'user.User'
 
-ASGI_APPLICATION = "myproject.asgi.application"
+ASGI_APPLICATION = "multiplayer_collaboration.asgi.application"
 
 CHANNEL_LAYERS = {
     'default': {
