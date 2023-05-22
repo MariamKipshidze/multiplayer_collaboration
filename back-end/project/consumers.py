@@ -23,22 +23,22 @@ class ProjectRoomConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data=None, bytes_data=None):
         text_data_json = json.loads(text_data)
         action = text_data_json['action']
-        username = text_data_json['username']
+        user_email = text_data_json['user_email']
 
         await self.channel_layer.group_send(
             self.room_group_name,
             {
                 'type': 'project_update',
                 'action': action,
-                'username': username,
+                'user_email': user_email,
             }
         )
 
     async def project_update(self, event):
         action = event['action']
-        username = event['username']
+        user_email = event['user_email']
 
         await self.send(text_data=json.dumps({
             'action': action,
-            'username': username,
+            'user_email': user_email,
         }))
