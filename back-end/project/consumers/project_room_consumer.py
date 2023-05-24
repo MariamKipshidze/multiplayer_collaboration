@@ -28,13 +28,13 @@ class ProjectRoomConsumer(AsyncWebsocketConsumer):
         await self.channel_layer.group_send(
             self.room_group_name,
             {
-                'type': 'project_update',
+                'type': 'project_detail',
                 'action': action,
                 'user_email': user_email,
             }
         )
 
-    async def project_update(self, event):
+    async def project_detail(self, event):
         action = event['action']
         user_email = event['user_email']
 
