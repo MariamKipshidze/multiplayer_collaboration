@@ -13,13 +13,13 @@ class ProjectViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
 
 
-class ProjectDetail(generics.UpdateAPIView, generics.RetrieveAPIView):
+class ProjectUpdate(generics.UpdateAPIView, generics.RetrieveAPIView):
     queryset = Project.objects.all()
     renderer_classes = [TemplateHTMLRenderer]
 
     def get(self, request, *args, **kwargs):
         project = self.get_object()
-        return Response({'project': project, 'room_name': project.pk}, template_name='project_detail.html')
+        return Response({'project': project, 'room_name': project.pk}, template_name='project_update.html')
 
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
