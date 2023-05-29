@@ -6,6 +6,7 @@ from project.views import ProjectUpdate
 
 router = DefaultRouter()
 router.register('projects', views.ProjectViewSet, basename="project")
+router.register('ably_project_update', views.AblyProjectUpdate, basename='ably_project_update')
 
 urlpatterns = [
     path('', include(router.urls)),
