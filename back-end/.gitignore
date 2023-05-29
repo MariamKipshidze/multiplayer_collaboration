@@ -119,3 +119,5 @@ files/
 
 # ignore local setting file
 /multiplayer_collaboration/settings/local.py
+
+local_os.py
